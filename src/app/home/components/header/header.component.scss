@@ -1,0 +1,155 @@
+app-header {
+  display: block;
+  @media (max-width: 1024px) {
+    .header-desktop {
+      display: none;
+    }
+    .header-mobile {
+      display: block;
+      .main-header {
+        padding: 10px;
+        height: 70px !important;
+        .logo {
+          bottom: 20px !important;
+        }
+      }
+    }
+  }
+  @media (min-width: 1024px) {
+    .header-desktop {
+      display: block;
+      .main-header {
+        padding: 0 25px;
+      }
+    }
+    .header-mobile {
+      display: none;
+    }
+  }
+
+  .main-header-wrap {
+    .header-mobile {
+      height: 70px;
+    }
+    .header-desktop {
+      .main-header {
+        overflow: hidden;
+      }
+    }
+    position: fixed;
+    z-index: 101;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: transparent;
+    -moz-transition: -moz-transform 0.3s ease-in-out;
+    -o-transition: -o-transform 0.3s ease-in-out;
+    -webkit-transition: -webkit-transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out;
+
+    #main-wrapper, .main-content {
+      height: 100%;
+    }
+    #main-wrapper {
+      position: relative;
+    }
+    .main-content {
+      padding-top: 100px;
+    }
+    .main-header {
+      box-sizing: border-box;
+      background: #fff;
+      height: 100px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-align: center;
+      border-bottom: 1px transparent solid;
+      -moz-backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      .header-menu {
+        position: absolute;
+        top: 25px;
+        left: 25px;
+      }
+      ul, ol, nav ul, nav ol {
+        list-style: none;
+        list-style-image: none;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        outline: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+        li {
+          display: inline-block;
+          padding-right: 20px;
+          color: #B7B7B7;
+          a {
+            font: 400 17px "Lato", "Helvetica Neue", Arial, sans-serif;
+            color: #4A4A4A;
+            text-decoration: none;
+          }
+        }
+      }
+      .logo {
+        position: absolute;
+        height: 33px;
+        width: 146px;
+        margin-left: -73px;
+        bottom: 0;
+        left: 50%;
+        display: inline-block;
+        -moz-transition: bottom 0.2s;
+        -o-transition: bottom 0.2s;
+        -webkit-transition: bottom 0.2s;
+        transition: bottom 0.2s;
+      }
+      a {
+        text-decoration: none;
+        color: #FF0083;
+        margin: 0;
+        padding: 0;
+        font-size: 100%;
+        vertical-align: baseline;
+        background: transparent;
+        -webkit-tap-highlight-color: transparent;
+      }
+      .btn-check-prices {
+        font: 700 1rem/2.6rem "Lato", "Helvetica Neue", Arial, sans-serif;
+        position: absolute;
+        right: 20px;
+        top: 14px;
+        -moz-transform: translateY(-100px);
+        -ms-transform: translateY(-100px);
+        -webkit-transform: translateY(-100px);
+        transform: translateY(-100px);
+        -moz-transition: -moz-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        -o-transition: -o-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        -webkit-transition: -webkit-transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+      .btn-prices-show {
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+      }
+    }
+    .sml {
+      height: 70px;
+      border-color: #DADADA;
+      .logo {
+        bottom: 20px;
+      }
+    }
+    .mat-menu-content:not(:empty) {
+      min-width: 160px;
+    }
+  }
+}

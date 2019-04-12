@@ -1,60 +1,29 @@
 <div class="main-header-wrap header-desktop">
-  <div [ngClass]="{'sml': isScrolled}"
+  <div [ngClass]="{'header-sm': isScrolled}"
        class="main-header">
-    <ul class="header-menu" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
-      <li itemprop="name">Home</li>
-      <li itemprop="name"><a class="js-track-event" data-event="menu_faq_clicked" id="gtm_menu_faq" itemprop="url" href="/faq">FAQ</a></li>
-      <li itemprop="name"><a class="js-track-event" data-event="menu_claims_clicked" id="gtm_menu_claims" href="/claims">Claims</a></li>
-      <li itemprop="name"><a class="js-track-event" data-event="menu_giveback_clicked" id="gtm_menu_giveback" itemprop="url" href="/giveback">Giveback</a></li>
-      <li itemprop="name"><a target="_blank" id="gtm_menu_blog" class="js-track-event" data-event="menu_blog_clicked" itemprop="url" href="//www.lemonade.com/blog/">Blog</a></li>
-      <li itemprop="name"><a class="js-track-event" data-event="menu_api_clicked" id="gtm_menu_api" itemprop="url" href="/api">API</a></li>
-    </ul>
-
-    <a href="/home" class="logo js-track-event" id="gtm_top_logo" data-event="home_logo_clicked"><img src="/assets/destop-logo.svg" alt="Lemonade" width="146" height="33"></a>
-
-    <!--<a href="/start?f=1" id="gtm_button_top_check_prices" class="btn-standard btn-pink btn-check-prices js-track-event js-btn-check-prices-header btn-check-prices-header" data-event="menu_check_prices">Check our prices</a>-->
-    <button [ngClass]="{'btn-prices-show': isShowBtn}"
-            class="btn-standard btn-check-prices" mat-raised-button>Check our prices</button>
+    <div class="menu">
+      <a href="{{menu.router}}" *ngFor="let menu of menuList"> {{ menu.name }} </a>
+    </div>
+    <a href="/home" class="logo"><img src="/assets/destop-logo.svg" width="146" height="33"></a>
+    <button [ngClass]="{'btn-show': isShowBtn}"
+            class="price-btn btn-hide"
+            mat-raised-button color="accent">Check our prices</button>
   </div>
 </div>
 <div class="main-header-wrap header-mobile">
-  <div [ngClass]="{'sml': isScrolled}"
+  <div [ngClass]="{'header-sm': isScrolled}"
        class="main-header">
     <button mat-icon-button [matMenuTriggerFor]="menu">
       <mat-icon>menu</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item>
-        <!--<mat-icon>dialpad</mat-icon>-->
-        <span>Home</span>
-      </button>
-      <button mat-menu-item disabled>
-        <!--<mat-icon>voicemail</mat-icon>-->
-        <span>FAQ</span>
-      </button>
-      <button mat-menu-item>
-        <!--<mat-icon>notifications_off</mat-icon>-->
-        <span>Claims</span>
-      </button>
-      <button mat-menu-item>
-        <!--<mat-icon>notifications_off</mat-icon>-->
-        <span>Giveback</span>
-      </button>
-      <button mat-menu-item>
-        <!--<mat-icon>notifications_off</mat-icon>-->
-        <span>Blog</span>
-      </button>
-      <button mat-menu-item>
-        <!--<mat-icon>notifications_off</mat-icon>-->
-        <span>API</span>
+      <button mat-menu-item *ngFor="let menu of menuList">
+        <span>{{menu.name}}</span>
       </button>
     </mat-menu>
-
-    <a href="/home" class="logo js-track-event" id="gtm_top_logo" data-event="home_logo_clicked"><img src="/assets/destop-logo.svg" alt="Lemonade" width="146" height="33"></a>
-
-    <!--<a href="/start?f=1" id="gtm_button_top_check_prices" class="btn-standard btn-pink btn-check-prices js-track-event js-btn-check-prices-header btn-check-prices-header" data-event="menu_check_prices">Check our prices</a>-->
-    <button [ngClass]="{'btn-prices-show': isShowBtn}"
-            style="padding: 0 10px;"
-            class="btn-standard btn-check-prices" mat-raised-button>Prices</button>
+    <a href="/home" class="logo"><img src="/assets/destop-logo.svg" width="146" height="33"></a>
+    <button [ngClass]="{'btn-show': isShowBtn}" style="padding: 0 10px;"
+            class="price-btn btn-hide"
+            mat-raised-button color="accent">Prices</button>
   </div>
 </div>

@@ -14,8 +14,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   @ViewChild('priceBtn') priceBtn;
   @HostListener("window:scroll", ['$event']) onWindowScroll(event: any) {
     if (window.pageYOffset > 0) {
+      // if scroll
       this.appHeader.isScrolled = true;
       if (this.priceBtn._elementRef.nativeElement.getBoundingClientRect().top < 0) {
+        // if the price btn is scrolled up over the header
         this.appHeader.isShowBtn = true;
       } else {
         this.appHeader.isShowBtn = false;

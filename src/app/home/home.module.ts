@@ -6,7 +6,8 @@ import {
   MatToolbarModule,
   MatMenuModule,
   MatButtonModule,
-  MatIconModule
+  MatIconModule,
+  MatListModule
 } from '@angular/material';
 
 import {routes} from "./home-routes.module";
@@ -19,6 +20,7 @@ import { HeaderComponent } from './components/header/header.component';
     HeaderComponent
   ],
   imports: [
+    MatListModule,
     MatToolbarModule,
     MatMenuModule,
     MatButtonModule,
